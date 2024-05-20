@@ -48,7 +48,6 @@ def predict():
     else:
         review='Negative'
     review_image = 'static/sentiment.jpeg'
-    color = 'lightgreen' if prediction[0] == 'positive' else 'red'
     return render_template('index.html', review_image=review_image,prediction_text='Moview Review Classified As {} '.format(review))
 
 
