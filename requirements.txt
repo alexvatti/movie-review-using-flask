@@ -1,9 +1,9 @@
 numpy
 pandas
-seabron
+seaborn
 matplotlib
 scikit-learn
-pickle
 nltk
 flask
 gunicorn
+
