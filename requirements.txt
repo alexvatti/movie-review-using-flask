@@ -6,3 +6,4 @@ scikit-learn
 pickle
 nltk
 flask
+gunicorn
