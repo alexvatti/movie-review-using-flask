@@ -34,15 +34,15 @@ def predict():
     For rendering results on HTML GUI
     '''
 
-    text = request.form['Movie Review']
-        #text=list(request.form.values())[0]
-    #print(text)
+    #text = request.form['Movie Review']
+    text=list(request.form.values())[0]
+    print(text)
     processed_text = pre_processing(text)
     X = vectorizer_model.transform([processed_text])
     prediction = ml_model.predict(X)
 
     ans =prediction[0]
-    #print(ans)
+    print(ans)
     if ans == 1: 
         review='Positive' 
     else:
@@ -53,4 +53,4 @@ def predict():
 
 
 if __name__=='__main__':
-    app.run(host='0.0.0.0',port=5000)
+    app.run(debug=True)
