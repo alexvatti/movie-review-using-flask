@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Review</title>
+        <style>
+            .large-input {
+                width: 400px;
+                height: 50px;  /* Height of the input box */
+            }
+
+            .btn-custom {
+                background-color: #28a745; /* Custom color */
+                border-color: #28a745;
+                font-size: 1.5rem; /* Larger font size */
+                padding: 1rem 2rem; /* More padding */
+        }
+        </style>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Movie Review Analysis</h1>
+        <img src="{{ review_image }}" alt="Moview Review Image">
+
+        <!-- Main Input Form For Receiving Query to our ML Model -->
+        <form action="{{ url_for('predict')}}" method="post">
+
+        <input type="text" name="Movie Review" placeholder="Movie Review" required="required" class="large-input" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large btn-custom">Predict</button>
+        </form>
+        <!-- Display Predicted Salary Text -->
+        <br>
+        <br>
+        <h1>{{ prediction_text }}</h1>
+    </div>
+</body>
+</html>
